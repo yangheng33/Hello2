@@ -23,8 +23,10 @@ public class MainActivity extends Activity
 	private Button btn3 = null;
 
 	private Button btn4 = null;
-	
+
 	private Button btn5 = null;
+
+	private Button btn6 = null;
 
 	private EditText editText1 = null;
 
@@ -67,6 +69,11 @@ public class MainActivity extends Activity
 				intent.setClass( MainActivity.this , DBActivity.class );
 				startActivity( intent );
 				break;
+			case R.id.button6:
+				intent = new Intent();
+				intent.setClass( MainActivity.this , NetWorkActivity.class );
+				startActivity( intent );
+				break;
 			}
 		}
 	};
@@ -91,6 +98,13 @@ public class MainActivity extends Activity
 
 		setContentView( R.layout.activity_main );
 
+		initUI();
+
+		uiFunction();
+	}
+
+	public void initUI()
+	{
 		btn1 = ( Button ) this.findViewById( R.id.button1 );
 
 		btn2 = ( Button ) this.findViewById( R.id.button2 );
@@ -98,13 +112,18 @@ public class MainActivity extends Activity
 		btn3 = ( Button ) this.findViewById( R.id.button3 );
 
 		btn4 = ( Button ) this.findViewById( R.id.button4 );
-		
+
 		btn5 = ( Button ) this.findViewById( R.id.button5 );
+
+		btn6 = ( Button ) this.findViewById( R.id.button6 );
 
 		editText1 = ( EditText ) this.findViewById( R.id.editText1 );
 
 		editText2 = ( EditText ) this.findViewById( R.id.editText2 );
+	}
 
+	public void uiFunction()
+	{
 		btn1.setOnClickListener( onClicklistener );
 
 		btn2.setOnClickListener( onClicklistener );
@@ -112,8 +131,10 @@ public class MainActivity extends Activity
 		btn3.setOnClickListener( onClicklistener );
 
 		btn4.setOnClickListener( onClicklistener );
-		
+
 		btn5.setOnClickListener( onClicklistener );
+
+		btn6.setOnClickListener( onClicklistener );
 	}
 
 	@Override
@@ -173,7 +194,6 @@ public class MainActivity extends Activity
 		super.onStop();
 	}
 
-
 	@Override
 	protected void onSaveInstanceState( Bundle outState )
 	{
@@ -188,5 +208,4 @@ public class MainActivity extends Activity
 		Log.i( this.getClass().getName() , "in onRestoreInstanceState" );
 	}
 
-	
 }

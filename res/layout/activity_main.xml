@@ -89,4 +89,13 @@
         android:layout_marginTop="22dp"
         android:text="数据库" />
 
+    <Button
+        android:id="@+id/button6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/button5"
+        android:layout_alignBottom="@+id/button5"
+        android:layout_alignLeft="@+id/button2"
+        android:text="网络" />
+
 </RelativeLayout>
